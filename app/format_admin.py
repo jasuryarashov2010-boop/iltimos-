@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from ..utils import html
+from .utils import html
 
 
 def recommendation_admin_text(rec, duplicate_note: str = "") -> str:
