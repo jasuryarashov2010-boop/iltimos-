@@ -53,14 +53,13 @@ dp.include_router(channel.router)
 app = FastAPI(title="Kitobxon V10", version="10.0.0")
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health() -> dict:
     return {
         "status": "ok",
         "database": await db.ping(),
         "redis": await storage_bundle.ping(),
     }
-
 
 @app.get("/ready")
 async def ready() -> dict:
